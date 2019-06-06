@@ -1,0 +1,91 @@
+Sn1per是一种自动扫描程序，可在渗透测试期间用于枚举和扫描漏洞。
+
+特征： 
+
+自动收集基本侦察（即whois，ping，DNS等） 
+
+自动针对目标域启动Google黑客查询 
+ 
+通过NMap端口扫描自动枚举开放端口 
+
+自动暴力破坏子域，收集DNS信息并检查区域传输 
+
+自动检查子域劫持 
+
+针对开放端口自动运行目标NMap脚本
+
+自动运行目标Metasploit扫描和利用模块
+
+自动扫描所有Web应用程序以查找常见漏洞
+
+自动暴力强制所有打开的服务
+
+自动测试匿名FTP访问
+
+自动运行WPScan，Arachni和Nikto以获取所有Web服务
+
+自动枚举NFS共享
+
+自动测试匿名LDAP访问
+
+自动枚举SSL / TLS密码，协议和漏洞
+
+自动枚举SNMP社区字符串，服务和用户
+
+自动列出SMB用户和共享，检查NULL会话并利用MS08-067
+
+自动利用易受攻击的JBoss，Java RMI和Tomcat服务器
+
+自动测试打开的X11服务器
+
+为Metasploitable，ShellShock，MS08-067，默认Tomcat Creds添加了Auto-pwn
+
+执行多个主机和子网的高级枚举
+
+自动与Metasploit Pro，MSFConsole和Zenmap集成以进行报告
+
+自动收集所有网站的屏幕截图
+
+创建单个工作空间以存储所有扫描输出
+
+
+
+Kali Linux安装：运行./install.sh
+Docker安装：Docker安装：https：//github.com/menzow/sn1per-docker
+
+Docker Build：
+
+https://hub.docker.com/r/menzo/sn1per-docker/builds/bqez3h7hwfun4odgd2axvn4/ 
+
+示例用法： 
+sniper <target> <report>sniper <target> stealth <report>sniper <CIDR> discoversniper <target> port <portnum>sniper <target> fullportonly <portnum>sniper <target> web <report>sniper <target> webporthttp <port>sniper <target> webporthttps <port>sniper <target> nobrute <report>sniper <targets.txt> airstrike <report>sniper <targets.txt> nuke <report>sniper lootsniper update
+
+模式：
+
+
+
+报告：将所有结果输出到战利品目录中的文本供以后参考。要启用报告，请将“报告”附加到任何狙击模式或命令。
+
+STEALTH：使用大多数非侵入式扫描快速枚举单个目标，以避免WAF / IPS阻塞
+
+发现：解析子网/ CIDR上的所有主机（即192.168.0.0/16），并针对每个主机启动狙击扫描。对内部网络扫描很有用。
+
+PORT：扫描特定端口是否存在漏洞。此模式下目前无法使用报告功能。
+
+FULLPORTONLY：执行完整的详细端口扫描并将结果保存到XML。
+
+WEB：将全自动Web应用程序扫描添加到结果中（仅限端口80 / tcp和443 / tcp）。适用于Web应用程序，但可能会显着增加扫描时间。
+
+WEBPORTHTTP：针对特定主机和端口启动完整的HTTP Web应用程序扫描。
+
+WEBPORTHTTPS：针对特定主机和端口启动完整的HTTPS Web应用程序扫描。
+
+NOBRUTE：针对目标主机/域启动完整扫描，而不使用强制服务。
+
+AIRSTRIKE：快速枚举多个主机上的开放端口/服务，并执行基本的指纹识别。要使用，请指定包含所有主机的文件的完整位置，需要扫描的IP并运行./sn1per /full/path/to/targets.txt空袭以开始扫描。
+
+NUKE：启动对所选文本文件中指定的多个主机的完全审核。用法示例：./ snni /pentest/loot/targets.txt nuke。
+
+LOOT：在浏览器中自动组织和显示战利品文件夹，并打开Metasploit Pro和Zenmap GUI以及所有端口扫描结果。要运行，请键入“狙击手战利品”。
+
+更新：检查更新并升级狙击手使用的所有组件。
