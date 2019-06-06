@@ -1,6 +1,7 @@
 ![alt tag](https://github.com/1N3/Sn1per/blob/master/Sn1per.jpg)  
 英文介绍：https://github.com/cream492/Sn1per/edit/master/README.md  
-中文介绍：
+中文介绍：https://github.com/cream492/Sn1per/blob/master/Chinese_introduction  
+  
 [![GitHub release](https://img.shields.io/github/release/1N3/Sn1per.svg)](https://github.com/1N3/Sn1per/releases) 
 [![GitHub issues](https://img.shields.io/github/issues/1N3/Sn1per.svg)](https://github.com/1N3/Sn1per/issues) 
 [![Github Stars](https://img.shields.io/github/stars/1N3/Sn1per.svg?style=social&label=Stars)](https://github.com/1N3/Sn1per/) 
